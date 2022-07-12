@@ -2,15 +2,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PersonComponent } from './feature/person/person.component';
+import {AcesorComponent } from './feature/acesor/acesor.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PersonComponent
+  AppComponent,
+  AcesorComponent
   ],
   imports: [
     BrowserModule,
