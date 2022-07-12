@@ -20,7 +20,7 @@ public class Acesor {
     private String telefono;
     private String email;
     private String equipoid;
-    private Boolean enabled;
+    private boolean enabled;
     private Timestamp created;
     private Timestamp updated;
 }
