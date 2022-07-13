@@ -6,11 +6,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClientComponent } from './feature/client/client.component';
+import { AcesorComponent } from './feature/acesor/acesor.component';
+import { ProductComponent } from './feature/products/product.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ClientComponent
+    ClientComponent,
+    AcesorComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,

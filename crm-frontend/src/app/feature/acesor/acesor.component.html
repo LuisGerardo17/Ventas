@@ -1,0 +1,35 @@
+<div class="grid justify-center mt-10">
+
+  <div class="card card-compact  w-96 bg-base-100 shadow-2xl shadow-black">
+
+    <div class="card-body">
+      <h2 class="card-title justify-center font-bold uppercase" > <span class="text-primary">CRUD ACESORES COMERCIALES</span></h2>
+        <div class="grid">
+          <label for ="">Nombre:</label>
+          <input class = "input input-primary mb-2" type="text" placeholder="Ejemplo:Luis" [(ngModel)] ="currentAcesor.nombre">
+          <label for ="">Teléfono:</label>
+          <input class = "input input-primary " type="text" placeholder = "Ejemplo:0987295066" [(ngModel)] ="currentAcesor.telefono">
+          <label for ="">Email:</label>
+          <input class = "input input-primary " type="email" placeholder = "Ejemplo:gerardo17epn@gmail.com" [(ngModel)] ="currentAcesor.email">
+          <label for ="">EquipoID:</label>
+          <input class = "input input-primary " type="text" placeholder = "Ejemplo:1" [(ngModel)] ="currentAcesor.equipoid">
+          <div class="form-control">
+            <label class="label cursor-pointer justify-start">
+              <input type="checkbox" class="toggle toggle-primary" checked />
+              <span class="label-text ml-4">Activo</span>
+            </label>
+          </div>
+          <label for ="">Fecha de Creación:</label>
+          <input class = "input input-primary " type="timestap" placeholder = "Ejemplo:1" [(ngModel)] ="currentAcesor.created">
+          <label for ="">Fecha de Actualización:</label>
+          <input class = "input input-primary " type="timestamp" placeholder = "Ejemplo:1" [(ngModel)] ="currentAcesor.updated">
+
+        </div>
+      <div class="card-actions justify-end">
+        <button class="btn btn-primary btn-sm" (click)="save()">Guardar</button>
+        <button class="btn btn-secondary btn-sm">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
