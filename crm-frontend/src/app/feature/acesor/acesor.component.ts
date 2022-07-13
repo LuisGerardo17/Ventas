@@ -56,7 +56,7 @@ export class AcesorComponent implements OnInit {
 findById(acesorId: number): void{
   this.acesorService.findById(acesorId)
   .subscribe(
-    (response:Acesor )=> {
+    (response:Acesor)=> {
     console.log("registro encontrado");
     this.currentAcesor = response;
 
