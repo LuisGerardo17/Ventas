@@ -10,7 +10,7 @@ import {AcesorComponent } from './feature/acesor/acesor.component';
   declarations: [
   AppComponent,
   AcesorComponent
-  ],
+],
   imports: [
     BrowserModule,
     AppRoutingModule,
