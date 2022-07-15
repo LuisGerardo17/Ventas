@@ -1,6 +1,7 @@
 package edu.yavirac.crmbackend.feature.acesor;
 
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
 import org.springframework.data.annotation.Id;
@@ -21,6 +22,6 @@ public class Acesor {
     private String email;
     private String equipoid;
     private boolean enabled;
-    private Timestamp created;
-    private Timestamp updated;
+    private Date created;
+    private Date updated;
 }
