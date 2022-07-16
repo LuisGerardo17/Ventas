@@ -15,14 +15,14 @@
           <input class = "input input-primary " type="text" placeholder = "Ejemplo:1" [(ngModel)] ="currentAcesor.equipoid">
           <div class="form-control">
             <label class="label cursor-pointer justify-start">
-              <input type="checkbox" class="toggle toggle-primary" checked />
+              <input type="checkbox" class="toggle toggle-primary" checked  [(ngModel)] ="currentAcesor.enabled"/>
               <span class="label-text ml-4">Activo</span>
             </label>
           </div>
           <label for ="">Fecha de Creación:</label>
-          <input class = "input input-primary " type="timestap" placeholder = "Ejemplo:1" [(ngModel)] ="currentAcesor.created">
+          <input class = "input input-primary " type="date" placeholder = "Ejemplo:1" [(ngModel)] ="currentAcesor.created">
           <label for ="">Fecha de Actualización:</label>
-          <input class = "input input-primary " type="timestamp" placeholder = "Ejemplo:1" [(ngModel)] ="currentAcesor.updated">
+          <input class = "input input-primary " type="date" placeholder = "Ejemplo:1" [(ngModel)] ="currentAcesor.updated">
 
         </div>
       <div class="card-actions justify-end">
