@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AcesorComponent } from './feature/acesor/acesor.component';
+
 
 const routes: Routes = [
-{path:'acesor', component:AcesorComponent},
-{path:'acesor/:id',component:AcesorComponent},
+{path: '', redirectTo: '/layout', pathMatch: 'full'},
+{path: 'feature', loadChildren:() => import('./feature/feature.module').then(m => m.FeatureModule)},
+{path: 'layout', loadChildren:() => import('./layout/layout.module').then(m => m.LayoutModule)},
+
 ];
 
 
