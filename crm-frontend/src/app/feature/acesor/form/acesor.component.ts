@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Acesor } from './acesor';
-import { AcesorService } from './acesor.service';
+import { Acesor } from '../acesor';
+import { AcesorService } from '../acesor.service';
 import { ActivatedRoute} from '@angular/router';
 @Component({
   selector: 'app-acesor',

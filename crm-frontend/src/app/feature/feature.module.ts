@@ -6,6 +6,7 @@ import { AcesorToolbarComponent } from './acesor/toolbar/acesor-toolbar.componen
 import { FormsModule } from '@angular/forms';
 import { AcesorComponent } from './acesor/form/acesor.component';
 import { AcesorListComponent } from './acesor/list/acesor-list.component';
+import { EquipoComboboxComponent } from './equipo/equipo-combobox/equipo-combobox.component';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { AcesorListComponent } from './acesor/list/acesor-list.component';
     AcesorComponent,
     AcesorToolbarComponent,
     AcesorListComponent,
+    EquipoComboboxComponent,
   ],
   imports: [
     CommonModule,

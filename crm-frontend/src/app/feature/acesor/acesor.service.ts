@@ -25,4 +25,13 @@ public save(acesor:Acesor):Observable<Acesor>{
  public findById(acesorId:number):Observable<Acesor>{
    return this.http.get<Acesor> (this.url+"/"+ acesorId, this.httpOptions);
 }
+
+public findAll():Observable<Acesor[]>{
+  return this.http.get<Acesor[]>(this.url+"/findAll", this.httpOptions);
+}
+
+public findByName(term: string):Observable<Acesor[]>{
+  return this.http.get<Acesor[]>(this.url+"/findByName/"+term, this.httpOptions);
+}
+
 }
