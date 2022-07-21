@@ -20,11 +20,15 @@
               <span class="label-text ml-4">Activo</span>
             </label>
           </div>
+
+
           <label for ="">Fecha de Creación:</label>
           <input class = "input input-primary " type="date" placeholder = "Ejemplo:1" [(ngModel)] ="currentAcesor.created">
           <label for ="">Fecha de Actualización:</label>
           <input class = "input input-primary " type="date" placeholder = "Ejemplo:1" [(ngModel)] ="currentAcesor.updated">
 
+          <app-equipo-combobox [idInput]="currentAcesor.equipoid" (currentEquipoId)="currentAcesor.equipoid = $event">
+          </app-equipo-combobox>
         </div>
       <div class="card-actions justify-end">
         <button class="btn btn-primary btn-sm" (click)="save()">Guardar</button>

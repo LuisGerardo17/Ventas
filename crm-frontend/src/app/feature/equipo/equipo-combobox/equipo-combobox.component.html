@@ -1,4 +1,9 @@
-<select class="select w-full max-w-xs select-primary">
+<select #equipoSelect class="select w-full max-w-xs select-primary" (change)="onChange(equipoSelect.value)">
   <option disabled selected>Seleccione el equipo</option>
-  <option *ngFor="let equipo of equipos">{{equipo.nombre}}</option>
+  <option *ngFor="let equipo of equipos"
+      [value]='equipo.id'
+      [selected]='equipo.id===idInput'
+      >
+       {{equipo.nombre}}
+  </option>
 </select>

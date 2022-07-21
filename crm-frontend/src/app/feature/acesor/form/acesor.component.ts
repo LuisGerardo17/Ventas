@@ -1,26 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { Acesor } from '../acesor';
-import { AcesorService } from '../acesor.service';
-import { ActivatedRoute} from '@angular/router';
+import { AcesorService} from '../acesor.service';
+import { ActivatedRoute, Router} from '@angular/router';
+import { AuthorityService } from '../../authority/authority.service';
+import { Authority } from '../../authority/authority';
 @Component({
   selector: 'app-acesor',
   templateUrl: './acesor.component.html'
 })
 export class AcesorComponent implements OnInit {
-   currentAcesor: Acesor = {
-    acesorId: 0,
-    nombre:"",
-    telefono: "",
-    email:"",
-    equipoid:"",
-    enabled:true,
-    created:new Date(),
-    updated:new Date()
-   };
+   currentAcesor: Acesor =  this.resetAcesor();
+
   //INYECTAMOS EL SERVICIO
   constructor(
     private acesorService: AcesorService,
-    private activedRoute: ActivatedRoute
+    private activedRoute: ActivatedRoute,
+    private route:Router,
+    private authorityService: AuthorityService
   ) { }
 
   ngOnInit(): void {
@@ -36,33 +32,48 @@ export class AcesorComponent implements OnInit {
   }
 
   save():void{
-     this.acesorService.save(this.currentAcesor).subscribe(
+     this.acesorService.save(this.currentAcesor)
+     .subscribe(
       (response) => {
         console.log("registro guardado");
-         this.currentAcesor = {
-          acesorId: 0,
-          nombre:"",
-          telefono: "",
-          email:"",
-          equipoid:"",
-          enabled:true,
-          created:new Date(),
-          updated:new Date()
-         };
-       }
-       )
-      }
+         this.currentAcesor = this.resetAcesor();
+         this.route.navigate(['/layout/acesor-list']);
+        }
+      )
+     }
 //Read
 findById(acesorId: number): void{
   this.acesorService.findById(acesorId)
   .subscribe(
     (response:Acesor)=> {
-    console.log("registro encontrado");
-    this.currentAcesor = response;
+     this.currentAcesor = response;
+     this.currentAcesor.authorities.forEach(
+      (item) => {
+        this.authorityService.findById(item.authorityId).subscribe(
+          (auth:Authority) => item.nombre = auth.nombre
+        )
 
+      }
+    )
     }
   )
 }
+
+
+resetAcesor(){
+  return this.currentAcesor={
+    acesorId: 0,
+    nombre:"",
+    telefono: "",
+    email:"",
+    equipoid: 0,
+    enabled:true,
+    created:new Date(),
+    updated:new Date(),
+    authorities: []
+  }
+
+ };
 
 }
 
