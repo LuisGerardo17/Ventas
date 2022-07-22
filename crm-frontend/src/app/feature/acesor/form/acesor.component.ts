@@ -89,6 +89,13 @@ onSelect(authority:Authority): void {
   this.currentAcesor.authorities.push(authority);
 }
 
+removeAuthority(id: number){
+  this.currentAcesor.authorities =
+  this.currentAcesor.authorities.filter(
+    (item) => item.authorityId != id
+  )
+}
+
 
 }
 
