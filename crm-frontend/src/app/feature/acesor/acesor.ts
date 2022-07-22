@@ -1,3 +1,5 @@
+import { Authority } from "../authority/authority";
+
 export interface Acesor
  {
    acesorId:number,
@@ -7,6 +9,7 @@ export interface Acesor
    equipoid: number,
    enabled: boolean,
    created:Date,
-   updated:Date
+   updated:Date,
+   authorities: Authority[]
 
 }

@@ -34,4 +34,9 @@ public findByName(term: string):Observable<Acesor[]>{
   return this.http.get<Acesor[]>(this.url+"/findByName/"+term, this.httpOptions);
 }
 
+public deleteById(id: number): Observable<void>{
+  console.log(id);
+  return this.http.delete<void>(this.url+"/delete/"+id, this.httpOptions);
+}
+
 }

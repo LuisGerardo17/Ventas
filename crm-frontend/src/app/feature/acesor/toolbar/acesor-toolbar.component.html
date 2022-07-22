@@ -15,5 +15,5 @@
       </ul>
   </div>
 
-<input type="text" placeholder="Search" class=" input input-bordered input-sm w-20 ml-2" />
+<input #inputSearch type="text" placeholder="Search" class=" input input-bordered input-sm w-20 ml-2" (input)="onInput(inputSearch.value)"/>
 </div>

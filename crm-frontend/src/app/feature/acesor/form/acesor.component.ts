@@ -5,8 +5,8 @@ import { ActivatedRoute, Router} from '@angular/router';
 import { AuthorityService } from '../../authority/authority.service';
 import { Authority } from '../../authority/authority';
 @Component({
-  selector: 'app-acesor',
-  templateUrl: './acesor.component.html'
+  selector:'app-acesor',
+  templateUrl:'./acesor.component.html'
 })
 export class AcesorComponent implements OnInit {
    currentAcesor: Acesor =  this.resetAcesor();
@@ -59,21 +59,36 @@ findById(acesorId: number): void{
   )
 }
 
-
 resetAcesor(){
-  return this.currentAcesor={
+  return this.currentAcesor = {
     acesorId: 0,
     nombre:"",
     telefono: "",
     email:"",
     equipoid: 0,
     enabled:true,
+    authorities: [],
     created:new Date(),
-    updated:new Date(),
-    authorities: []
-  }
+    updated:new Date()
 
- };
+  };
+
+ }
+
+ delete():void{
+  this.acesorService.deleteById(this.currentAcesor.acesorId)
+  .subscribe(
+    () => {
+      this.resetAcesor();
+    }
+  )
+}
+
+
+onSelect(authority:Authority): void {
+  this.currentAcesor.authorities.push(authority);
+}
+
 
 }
 

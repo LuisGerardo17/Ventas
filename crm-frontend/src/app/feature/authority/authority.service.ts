@@ -25,4 +25,17 @@ export class AuthorityService {
   }
 
 
+  public findByName(term: string): Observable<Authority[]> {
+    return this.http.get<Authority[]>(this.url + "/findByName/" + term, this.httpOptions);
+  }
+
+  //Create
+  public save(authority: Authority): Observable<Authority> {
+    return this.http.post<Authority>(this.url + "/save", authority, this.httpOptions);
+  }
+
+  public findAll(): Observable<Authority[]> {
+    return this.http.get<Authority[]>(this.url + "/findAll", this.httpOptions);
+  }
+
 }

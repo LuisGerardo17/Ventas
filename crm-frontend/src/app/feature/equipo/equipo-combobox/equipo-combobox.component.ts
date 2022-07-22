@@ -7,17 +7,20 @@ import { EquipoService } from '../equipo.service';
 })
 export class EquipoComboboxComponent implements OnInit {
 
-  equipos: Equipo[] = [];
+
   constructor(
     private equipoService: EquipoService
   ) { }
-
+  equipos: Equipo[] = [];
 
   @Output() currentEquipoId = new EventEmitter<number>();
   @Input() idInput: number = 0;
 
   ngOnInit(): void {
     this.findAll();
+    if (this.idInput!=0){
+      console.log("seleccionando: "+ this.idInput);
+    }
   }
 
 
