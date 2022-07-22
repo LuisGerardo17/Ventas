@@ -11,5 +11,5 @@ public class Authority {
     @Id
     @Column("authority_id")
     private long authorityId;
-    private String name;
+    private String nombre;
 }

@@ -39,6 +39,6 @@ public class AcesorService {
 
      
     public List<Acesor> findByName(String term){
-      return acesorRepository.findByNameLikeIgnoreCase(term);
+      return acesorRepository.findByNombreLikeIgnoreCase(term);
   }
 }

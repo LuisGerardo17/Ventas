@@ -37,4 +37,9 @@ public class AuthorityService {
       return authorityRepository.findAll();
     }
 
+    
+    public List<Authority> findByName(String term){
+      return authorityRepository.findByNombreLikeIgnoreCase(term+"%");
+  }
+
 }
