@@ -27,6 +27,9 @@ public class Acesor {
 
     @MappedCollection(idColumn = "acesor_id")
     private Set<AcesorAuthority> authorities = new HashSet<>();
+    
+    @MappedCollection(idColumn = "acesor_id")
+    private Set<AcesorClient> clientes = new HashSet<>();
     private Date created;
     private Date updated;
 }
