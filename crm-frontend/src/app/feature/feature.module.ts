@@ -7,6 +7,9 @@ import { AcesorComponent } from './acesor/form/acesor.component';
 import { AcesorListComponent } from './acesor/list/acesor-list.component';
 import { EquipoComboboxComponent } from './equipo/equipo-combobox/equipo-combobox.component';
 import { AuthoritySearchComponent } from './authority/search/authority-search.component';
+import { PersonComponent } from './person/person.component';
+import { PersonComboboxComponent } from './person/person-combobox/person-combobox.component';
+import { ClientSearchComponent } from './search/client-search.component';
 
 
 @NgModule({
@@ -15,7 +18,10 @@ import { AuthoritySearchComponent } from './authority/search/authority-search.co
     AcesorToolbarComponent,
     AcesorListComponent,
     EquipoComboboxComponent,
-    AuthoritySearchComponent
+    AuthoritySearchComponent,
+    PersonComponent,
+    PersonComboboxComponent,
+    ClientSearchComponent
 
   ],
   imports: [

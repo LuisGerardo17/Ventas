@@ -1,4 +1,4 @@
-import { Authority } from "../authority/authority";
+import { Client } from "../client/client";
 
 export interface Acesor
  {
@@ -6,10 +6,10 @@ export interface Acesor
    nombre: string,
    telefono: string,
    email: string,
-   equipoid: number,
+   personId: number,
    enabled: boolean,
    created:Date,
    updated:Date,
-   authorities: Authority[]
+   clients: Client[]
 
 }

@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Acesor } from '../acesor';
 import { AcesorService} from '../acesor.service';
 import { ActivatedRoute, Router} from '@angular/router';
-import { AuthorityService } from '../../authority/authority.service';
-import { Authority } from '../../authority/authority';
+import { ClientService } from '../../client/client.service';
+import { Client } from '../../client/client';
 @Component({
   selector:'app-acesor',
   templateUrl:'./acesor.component.html'
@@ -16,7 +16,7 @@ export class AcesorComponent implements OnInit {
     private acesorService: AcesorService,
     private activedRoute: ActivatedRoute,
     private route:Router,
-    private authorityService: AuthorityService
+    private clientService: ClientService
   ) { }
 
   ngOnInit(): void {
@@ -47,10 +47,10 @@ findById(acesorId: number): void{
   .subscribe(
     (response:Acesor)=> {
      this.currentAcesor = response;
-     this.currentAcesor.authorities.forEach(
+     this.currentAcesor.clients.forEach(
       (item) => {
-        this.authorityService.findById(item.authorityId).subscribe(
-          (auth:Authority) => item.nombre = auth.nombre
+        this.clientService.findById(item.clientId).subscribe(
+          (auth:Client) => item.name = auth.name
         )
 
       }
@@ -65,9 +65,9 @@ resetAcesor(){
     nombre:"",
     telefono: "",
     email:"",
-    equipoid: 0,
+    personId:0,
     enabled:true,
-    authorities: [],
+    clients: [],
     created:new Date(),
     updated:new Date()
 
@@ -85,13 +85,13 @@ resetAcesor(){
 }
 
 
-onSelect(authority:Authority): void {
-  this.currentAcesor.authorities.push(authority);
+onSelect(client:Client): void {
+  this.currentAcesor.clients.push(client);
 }
 
 removeAuthority(id: number){
-  this.currentAcesor.authorities =
-  this.currentAcesor.authorities.filter(
+  this.currentAcesor.clients =
+  this.currentAcesor.clients.filter(
     (item) => item.authorityId != id
   )
 }
