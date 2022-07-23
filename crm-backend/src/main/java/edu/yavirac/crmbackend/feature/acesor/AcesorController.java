@@ -24,7 +24,6 @@ public class AcesorController {
 @PostMapping("/save")
 public Acesor save(@RequestBody Acesor acesor){
       return acesorService.save(acesor);
-    
 }
 
 //Read

@@ -18,38 +18,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 @RequestMapping("/api/person")
 public class PersonController {
 
-    
-    @Autowired
-    PersonService personService;
-    //Create Read Update Delete
-    @PostMapping("/save")
-    public Person save(@RequestBody Person person) {
-         return personService.save(person);
-    }
-  //Read
-    @GetMapping("/{id}")
-    public Person findById(@PathVariable long id){
-      return personService.findById(id);
-    }
-  //Update
-    @PutMapping("/update")
-    //@ResponseStatus(HttpStatus.CREATED)
-    public Person update (@RequestBody Person person){
-        return personService.save(person);
-        
-    }
+  
+  @Autowired
+  PersonService personService;
 
-    @DeleteMapping("/delete/{id}")
-    public String deleteById (@PathVariable long id){
-         personService.deleteById(id);
-         return "Registro eliminado";
-    }
-
-   //Para entregar todos los registros
-    @GetMapping("/all")
-     public List<Person> findAll(){
-         return personService.findAll();
-        }
-
+  @GetMapping("/findAll")
+  public List<Person> findAll(){
+      return personService.findAll();
+  }
+  
     
 }
