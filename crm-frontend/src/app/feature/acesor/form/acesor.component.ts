@@ -89,10 +89,10 @@ onSelect(client:Client): void {
   this.currentAcesor.clients.push(client);
 }
 
-removeAuthority(id: number){
+removeClient(id: number){
   this.currentAcesor.clients =
   this.currentAcesor.clients.filter(
-    (item) => item.authorityId != id
+    (item) => item.clientId != id
   )
 }
 

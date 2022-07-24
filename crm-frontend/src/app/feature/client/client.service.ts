@@ -17,7 +17,7 @@ export class ClientService {
     headers: new HttpHeaders({"Content-Type":"application/json"})
   }
 
-  private url:string = "http://localhost:8090/api/clientes";
+  private url:string = "http://localhost:8090/api/client";
 
 
   public findById(id: number):Observable<Client>{
