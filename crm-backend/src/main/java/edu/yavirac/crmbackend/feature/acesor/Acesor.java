@@ -20,16 +20,12 @@ public class Acesor {
     @Column("acesor_id")
     private long acesorId;
     private String nombre;
-   private String telefono;
-   private String email;
-    private Long equipoid;
+    private String telefono;
+    private String email;
+    private Long personId;
     private boolean enabled;
-
     @MappedCollection(idColumn = "acesor_id")
-    private Set<AcesorAuthority> authorities = new HashSet<>();
-    
-    @MappedCollection(idColumn = "acesor_id")
-    private Set<AcesorClient> clientes = new HashSet<>();
+    private Set<AcesorClient> clients = new HashSet<>();
     private Date created;
     private Date updated;
 }

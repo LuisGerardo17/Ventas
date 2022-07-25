@@ -15,11 +15,12 @@ public class Client {
     @Column("client_id")
     private long clientId;
     private String name;
-    private String dni;
+     private String dni;
     private String phone;
     private String email;
     private Date created;
     private Date updated;
     private boolean enable;
+    
 
 }

@@ -9,6 +9,6 @@ import lombok.Data;
 public class Person {
     @Id //Para la pk
     private long id;
-    private String nombre;
-    private String dni;
+    private String name;
+    
 }

@@ -49,4 +49,9 @@ public class ClientController {
     }
     
     
+    @GetMapping("/findByName/{term}")
+    public List<Client> findByName(@PathVariable String term){
+        System.out.println("Backend:"+term);
+        return clientService.findByName(term);
+    }
 }
