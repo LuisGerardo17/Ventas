@@ -8,6 +8,7 @@ import { ClientService } from '../client.service';
 })
 export class ClientSearchComponent implements OnInit {
 
+
   constructor(
     private clientService: ClientService
   ) { }

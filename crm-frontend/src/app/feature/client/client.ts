@@ -4,7 +4,8 @@ export interface Client {
    dni: string,
    phone: string,
    email: string,
+   enable: boolean,
+   acesorId:number,
    created: Date,
    updated: Date,
-   enable: boolean,
 }

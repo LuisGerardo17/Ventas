@@ -1,4 +1,4 @@
-import { Client } from "../client/client";
+import { AcesorClient } from "./AcesorClient";
 
 export interface Acesor
  {
@@ -8,8 +8,9 @@ export interface Acesor
    email: string,
    personId: number,
    enabled: boolean,
+   clients:AcesorClient[],
    created:Date,
    updated:Date,
-   clients: Client[]
+
 
 }

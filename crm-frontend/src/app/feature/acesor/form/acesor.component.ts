@@ -4,6 +4,7 @@ import { AcesorService} from '../acesor.service';
 import { ActivatedRoute, Router} from '@angular/router';
 import { ClientService } from '../../client/client.service';
 import { Client } from '../../client/client';
+import { AcesorClient } from '../AcesorClient';
 @Component({
   selector:'app-acesor',
   templateUrl:'./acesor.component.html'
@@ -48,7 +49,7 @@ findById(acesorId: number): void{
     (response:Acesor)=> {
      this.currentAcesor = response;
      this.currentAcesor.clients.forEach(
-      (item) => {
+      (item:AcesorClient) => {
         this.clientService.findById(item.clientId).subscribe(
           (auth:Client) => item.name = auth.name
         )
@@ -86,7 +87,15 @@ resetAcesor(){
 
 
 onSelect(client:Client): void {
-  this.currentAcesor.clients.push(client);
+  let acesorClient= {
+   acesorId:this.currentAcesor.acesorId,
+   clientId:client.clientId,
+   id:0,
+   name:client.name
+
+  }
+  console.log(client);
+  this.currentAcesor.clients.push(acesorClient);
 }
 
 removeClient(id: number){
