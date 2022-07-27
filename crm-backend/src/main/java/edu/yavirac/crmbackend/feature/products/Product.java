@@ -29,7 +29,5 @@ public class Product {
     private Set<ProductRelated> products = new HashSet<>();
     private Date created;
     private Date updated;
-    public Product getId() {
-        return null;
-    }
+      
 }
