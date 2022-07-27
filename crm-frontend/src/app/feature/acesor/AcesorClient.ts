@@ -1,6 +1,6 @@
 export interface AcesorClient
  {
-  id:number,
+   id:number,
    name:string,
    acesorId:number;
    clientId:number;
