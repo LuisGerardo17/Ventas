@@ -10,5 +10,5 @@ public class Person {
     @Id //Para la pk
     private long id;
     private String name;
-    private String dni;
+    
 }
