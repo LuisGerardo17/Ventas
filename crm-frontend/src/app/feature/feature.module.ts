@@ -7,6 +7,11 @@ import { AcesorComponent } from './acesor/form/acesor.component';
 import { AcesorListComponent } from './acesor/list/acesor-list.component';
 import { EquipoComboboxComponent } from './equipo/equipo-combobox/equipo-combobox.component';
 import { AuthoritySearchComponent } from './authority/search/authority-search.component';
+import { ProductComponent } from './products/form/product.component';
+import { ProductListComponent } from './products/list/product-list.component';
+import { ProductToolbarComponent } from './products/toolbar/product-toolbar.component';
+import { ProductSearchComponent } from './products/search/product-search.component';
+import { PersonComboboxComponent } from './person/person-combobox/person-combobox.component';
 
 
 @NgModule({
@@ -15,7 +20,12 @@ import { AuthoritySearchComponent } from './authority/search/authority-search.co
     AcesorToolbarComponent,
     AcesorListComponent,
     EquipoComboboxComponent,
-    AuthoritySearchComponent
+    AuthoritySearchComponent,
+    ProductComponent,
+    ProductListComponent,
+    ProductToolbarComponent,
+    ProductSearchComponent,
+    PersonComboboxComponent
 
   ],
   imports: [
