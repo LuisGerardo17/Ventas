@@ -31,10 +31,11 @@ public class ClientService {
     public  List<Client> findAll(){
         return clientRepository.findAll();
     }
-
-    
+ 
     public List<Client> findByName(String term){
         return clientRepository.findByNameLikeIgnoreCase(term+"%");
     }
     
 }
+    
+

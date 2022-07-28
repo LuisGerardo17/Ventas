@@ -10,3 +10,4 @@ public interface ClientRepository extends CrudRepository<Client , Long> {
     List<Client> findByNameLikeIgnoreCase(String term);
 
 }
+

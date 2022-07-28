@@ -1,10 +1,12 @@
 package edu.yavirac.crmbackend.feature.client;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
+
 import lombok.Data;
 
 @Data
@@ -21,6 +23,7 @@ public class Client {
     private Date created;
     private Date updated;
     private boolean enable;
+    
     
 
 }

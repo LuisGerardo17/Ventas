@@ -38,8 +38,6 @@ export class ClientSearchComponent implements OnInit {
 
   }
 
-
-
   onSelect(client:Client): void{
     this.clientEmiter.emit(client);
   }
