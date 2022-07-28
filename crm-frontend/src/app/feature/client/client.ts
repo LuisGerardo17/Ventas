@@ -1,3 +1,5 @@
+import { ClientProduct } from "./ClientProduct";
+
 export interface Client
  {
    clientId:number,
@@ -8,11 +10,7 @@ export interface Client
    created: Date,
    updated: Date,
    enable: boolean,
-}
-//otra forma de declarar el cosntructor como clase
-//export class Person
-   //   { constructor(
-    //    public personId: number
-     // ){}
+   acesorId: number,
+   products: ClientProduct[],
 
-     // }
+}

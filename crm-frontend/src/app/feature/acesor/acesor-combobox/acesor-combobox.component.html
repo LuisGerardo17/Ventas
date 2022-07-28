@@ -1,0 +1,8 @@
+<select #acesorSelect class="select w-full max-w-xs select-primary" (change)="onChange(acesorSelect.value)">
+    <option disabled selected>Seleccione el acesor</option>
+    <option [value]='acesor.acesorId' *ngFor="let acesor of acesores"
+    [selected]="acesor.acesorId === idInput"
+    >
+        {{acesor.nombre}}
+    </option>
+</select>

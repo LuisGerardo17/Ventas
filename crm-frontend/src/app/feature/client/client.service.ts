@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable } from '@angular/core';
 import {Client} from './client';
 import {Observable} from 'rxjs';
 import {HttpClient, HttpHeaders}  from '@angular/common/http';
@@ -7,8 +7,8 @@ import {HttpClient, HttpHeaders}  from '@angular/common/http';
   providedIn: 'root'
 })
 export class ClientService {
-   private httpOptions = {
-    headers:new HttpHeaders({"Content.Type":"aplication/json"}) //instancia la clase
+  private httpOptions = {
+  headers: new HttpHeaders({"Content-Type":"application/json"}) //instancia la clase
 }
 
  private url:string = "http://localhost:8090/api/client";
@@ -25,5 +25,18 @@ export class ClientService {
     //Read
         public findById(clientId:number):Observable<Client>{
           return this.http.get<Client> (this.url+"/"+clientId, this.httpOptions);
+    }
+
+    public findAll():Observable<Client[]>{
+      return this.http.get<Client[]>(this.url+"/findAll", this.httpOptions);
+    }
+
+    public findByName(term: string):Observable<Client[]>{
+      return this.http.get<Client[]>(this.url+"/findByName/"+term, this.httpOptions);
+    }
+
+    public deleteById(id: number): Observable<void>{
+      console.log(id);
+      return this.http.delete<void>(this.url+"/delete/"+id, this.httpOptions);
     }
 }
