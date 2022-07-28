@@ -14,36 +14,45 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/api/product")
-@CrossOrigin ({"*"})
 public class ProductController {
-    
-    @Autowired
-    ProductService productService;
+  
+@Autowired
+ ProductService productService;
+ //Create
+@PostMapping("/save")
+public Product save(@RequestBody Product product){
+      return productService.save(product);
+}
 
-    @PostMapping("/save")
-    public Product save(@RequestBody Product product){
-        return productService.save(product);
-    }
+//Read
+@GetMapping("/{id}")
+public Product findById(@PathVariable long id){
+    return productService.findById(id);
+}
+//Update
+@PutMapping("/update")
+public Product update (@RequestBody Product  product){
+    return productService.save(product);
+}
 
-    @GetMapping("/{id}")
-    public Product findById(@PathVariable Long id){
-        return productService.findById(id);
-    }
+//Delete
+@DeleteMapping("/delete/{id}")
+public void  deleteById (@PathVariable long id){
+     productService.deleteById(id);
+}
 
-    @PutMapping("/update")
-    public Product update(@RequestBody Product product){
-        return productService.save(product);
-    }
+//para mostrar todos los registros 
+@GetMapping("/findAll")
+  public List findAll(){
+      return productService.findAll();
+ }
 
-    @DeleteMapping("/delete/{id}")
-    public void deleteById(@PathVariable Long id)
-    {
-        productService.deleteById(id);
-    }
+ 
+ @GetMapping("/findByName/{term}")
+ public List<Product> findByName(@PathVariable String term){
+     return productService.findByName(term+"%");
+ }
 
-    @GetMapping("/all")
-    public List<Product> findAll(){
-        return productService.findAll();
-    }
 }
