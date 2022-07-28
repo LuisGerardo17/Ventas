@@ -9,6 +9,7 @@ import { EquipoComboboxComponent } from './equipo/equipo-combobox/equipo-combobo
 import { AuthoritySearchComponent } from './authority/search/authority-search.component';
 import { PersonComboboxComponent } from './person/person-combobox/person-combobox.component';
 import { ClientSearchComponent } from './client/search/client-search.component';
+import { ProductComponent } from './products/form/product.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ClientSearchComponent } from './client/search/client-search.component';
     EquipoComboboxComponent,
     AuthoritySearchComponent,
     PersonComboboxComponent,
-    ClientSearchComponent
+    ClientSearchComponent,
+    ProductComponent
 ],
   imports: [
     CommonModule,
