@@ -15,11 +15,11 @@ import { PersonComboboxComponent } from './person/person-combobox/person-combobo
   declarations: [
     EquipoComboboxComponent,
     AuthoritySearchComponent,
-    ProductComponent,
     ProductListComponent,
     ProductToolbarComponent,
     ProductSearchComponent,
-    PersonComboboxComponent
+    PersonComboboxComponent,
+    ProductComponent
 
   ],
   imports: [
