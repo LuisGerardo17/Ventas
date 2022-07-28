@@ -9,7 +9,12 @@ import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
+<<<<<<< HEAD
   AppComponent
+=======
+  AppComponent,
+  AcesorComponent
+>>>>>>> master
 ],
   imports: [
     BrowserModule,
