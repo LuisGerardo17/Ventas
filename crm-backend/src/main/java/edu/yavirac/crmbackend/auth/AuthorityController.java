@@ -3,6 +3,7 @@ package edu.yavirac.crmbackend.auth;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,38 +15,41 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/authority")
-
+@CrossOrigin({"*"})
 public class AuthorityController {
     @Autowired
     AuthorityService authorityService;
 
-     //Create
+    //create
     @PostMapping("/save")
-    public Authority save(@RequestBody Authority authority) {
+    public Authority save(@RequestBody Authority authority){
         return authorityService.save(authority);
-   }
-    //Rea
-    @GetMapping("/{id}")
-    public Authority findById(@PathVariable long id){
-     return authorityService.findById(id);
-   }
-    //Update
-     @PutMapping("/update")
-     public Authority update (@RequestBody Authority authority){
-       return authorityService.save(authority);
     }
-    //Delete
-    @DeleteMapping("/delete/{id}")
-     public void deleteById (@PathVariable long id){
+    //read
+    @GetMapping("/findById/{id}")
+    public Authority findById(@PathVariable long id){
+        return authorityService.findById(id);
+    }
+    //update
+    @PutMapping("/update")
+    public Authority update(@RequestBody Authority authority){
+        return authorityService.save(authority);
+    }
+    //delete
+    @DeleteMapping("/deleteById/{id}")
+    public void deleteById(@PathVariable long id){
         authorityService.deleteById(id);
-    
     }
 
     @GetMapping("/all")
-    public List <Authority> findAll(){
+    public List<Authority> findAll(){
         return authorityService.findAll();
-
     }
-  }
-
-
+    
+    @GetMapping("/findByName/{term}")
+    public List<Authority> findByName(@PathVariable String term){
+        System.out.println("Backend:"+term);
+        return authorityService.findByName(term);
+    }
+    
+}

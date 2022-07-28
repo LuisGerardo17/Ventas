@@ -11,30 +11,27 @@ public class AuthorityService {
     AuthorityRepository authorityRepository;
 
     //Create
-    public   Authority save (Authority authority){
-      return authorityRepository.save(authority);
-
+    public Authority save(Authority authority){
+        return authorityRepository.save(authority);
     }
 
     //Read
-    public Authority findById (long id){
+    public Authority findById(long id){
         return authorityRepository.findById(id).orElse(new Authority());
-  
-      }
-
-      //Update = Create
-      //Delete
-    public void deleteById(long id) {
-         authorityRepository.deleteById(id);   
     }
 
-    //Paara todos los registros
-    public List<Authority> getAuthoritiesfindAll() {
+    //Update = Create
+    //Delete
+    public void deleteById(long id){
+        authorityRepository.deleteById(id);
+    }
+
+    public List<Authority> findAll(){
         return authorityRepository.findAll();
     }
 
-    public List<Authority> findAll() {
-      return authorityRepository.findAll();
+    public List<Authority> findByName(String term){
+        return authorityRepository.findByNameLikeIgnoreCase(term+"%");
     }
-
+    
 }

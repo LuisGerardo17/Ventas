@@ -28,8 +28,17 @@ public class ClientService {
         clientRepository.deleteById(id);
     }
 
+    //todos los registros
+    public List<Client> getClientsfindAll(){
+        return clientRepository.findAll();
+    }
+
     public  List<Client> findAll(){
         return clientRepository.findAll();
+    }
+
+    public List<Client> findByName(String term){
+        return clientRepository.findByNameLikeIgnoreCase(term);
     }
     
 }

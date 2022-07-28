@@ -1,9 +1,12 @@
 package edu.yavirac.crmbackend.feature.client;
 
-import java.sql.Timestamp;
+import java.sql.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
+import org.springframework.data.relational.core.mapping.MappedCollection;
 import org.springframework.data.relational.core.mapping.Table;
 
 import lombok.Data;
@@ -19,8 +22,11 @@ public class Client {
     private String dni;
     private String phone;
     private String email;
-    private Timestamp created;
-    private Timestamp updated;
     private boolean enable;
+    private long acesorId;
 
+    @MappedCollection(idColumn = "client_id")
+    private Set<ClientProduct> products = new HashSet<>();
+    private Date created;
+    private Date updated;
 }

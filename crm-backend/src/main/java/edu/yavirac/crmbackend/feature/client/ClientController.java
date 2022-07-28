@@ -22,31 +22,40 @@ public class ClientController {
     @Autowired
     ClientService clientService;
 
+    //create
     @PostMapping("/save")
     public Client save(@RequestBody Client client){
         return clientService.save(client);
     }
 
-    @GetMapping("/{id}")
-    public Client findById(@PathVariable long id){
-        return clientService.findById(id);
+    //read
+    @GetMapping("/{clientId}")
+    public Client findById(@PathVariable long clientId){
+        return clientService.findById(clientId);
     }
 
+    //update
     @PutMapping("/update")
     public Client update(@RequestBody Client client){
         return clientService.save(client);
     }
 
+    //delete
     @DeleteMapping("/delete/{id}")
-    public void deleteById(@PathVariable long id)
-    {
-        clientService.deleteById(id);
+    public void deleteById(@PathVariable long clientId){
+        clientService.deleteById(clientId);
     }
 
-    @GetMapping("/all")
+    //mostrar todos los registros
+    @GetMapping("/findAll")
     public List<Client> findAll(){
         return clientService.findAll();
     }
+    
+    @GetMapping("/findByName/{term}")
+    public List<Client> findByName(@PathVariable String term){
+        return clientService.findByName(term+"%");
+ }
     
     
 }
