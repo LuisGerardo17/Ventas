@@ -19,12 +19,12 @@ public class Client {
     @Column("client_id")
     private long clientId;
     private String name;
-    private String dni;
+     private String dni;
     private String phone;
     private String email;
     private boolean enable;
     private long acesorId;
-
+    
     @MappedCollection(idColumn = "client_id")
     private Set<ClientProduct> products = new HashSet<>();
     private Date created;

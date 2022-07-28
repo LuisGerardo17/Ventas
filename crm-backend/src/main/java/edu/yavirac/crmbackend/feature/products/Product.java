@@ -19,6 +19,8 @@ public class Product {
     private String descripcion;
     private String marca;
     private String modelo;
+    private String nombre;
+    private String imagen;
     private Date created;
     private Date updated;
     private Boolean enable;

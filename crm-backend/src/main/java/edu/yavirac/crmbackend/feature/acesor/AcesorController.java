@@ -24,7 +24,6 @@ public class AcesorController {
 @PostMapping("/save")
 public Acesor save(@RequestBody Acesor acesor){
       return acesorService.save(acesor);
-    
 }
 
 //Read
@@ -45,9 +44,15 @@ public void  deleteById (@PathVariable long id){
 }
 
 //para mostrar todos los registros 
-@GetMapping("/all")
-  public List<Acesor> findAll(){
+@GetMapping("/findAll")
+  public List findAll(){
       return acesorService.findAll();
+ }
+
+ 
+ @GetMapping("/findByName/{term}")
+ public List<Acesor> findByName(@PathVariable String term){
+     return acesorService.findByName(term+"%");
  }
 
 }

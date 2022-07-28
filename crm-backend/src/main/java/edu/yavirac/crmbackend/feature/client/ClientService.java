@@ -38,7 +38,9 @@ public class ClientService {
     }
 
     public List<Client> findByName(String term){
-        return clientRepository.findByNameLikeIgnoreCase(term);
+        return clientRepository.findByNameLikeIgnoreCase(term+"%");
     }
     
 }
+    
+

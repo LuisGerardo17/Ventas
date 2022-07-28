@@ -28,6 +28,7 @@ public save(acesor:Acesor):Observable<Acesor>{
 
 public findAll():Observable<Acesor[]>{
   return this.http.get<Acesor[]>(this.url+"/all", this.httpOptions);
+
 }
 
 public findByName(term: string):Observable<Acesor[]>{

@@ -6,5 +6,5 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface AcesorRepository extends CrudRepository<Acesor,Long> {
      List<Acesor> findAll();// para traer todos los registros de acesores
-    
+     List<Acesor> findByNombreLikeIgnoreCase(String term);
 }

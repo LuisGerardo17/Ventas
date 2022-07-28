@@ -2,9 +2,12 @@ package edu.yavirac.crmbackend.feature.acesor;
 
 
 import java.sql.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
+import org.springframework.data.relational.core.mapping.MappedCollection;
 import org.springframework.data.relational.core.mapping.Table;
 
 
@@ -20,7 +23,9 @@ public class Acesor {
     private String telefono;
     private String email;
     private Long personId;
-    private Boolean enabled;
+    private boolean enabled;
+    @MappedCollection(idColumn = "acesor_id")
+    private Set<AcesorClient> clients = new HashSet<>();
     private Date created;
     private Date updated;
 }

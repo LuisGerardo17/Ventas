@@ -35,9 +35,10 @@ public class AuthorityController {
     public Authority update(@RequestBody Authority authority){
         return authorityService.save(authority);
     }
-    //delete
+        
+    //Delete
     @DeleteMapping("/deleteById/{id}")
-    public void deleteById(@PathVariable long id){
+     public void deleteById (@PathVariable long id){
         authorityService.deleteById(id);
     }
 
@@ -46,6 +47,7 @@ public class AuthorityController {
         return authorityService.findAll();
     }
     
+
     @GetMapping("/findByName/{term}")
     public List<Authority> findByName(@PathVariable String term){
         System.out.println("Backend:"+term);
@@ -53,3 +55,5 @@ public class AuthorityController {
     }
     
 }
+
+

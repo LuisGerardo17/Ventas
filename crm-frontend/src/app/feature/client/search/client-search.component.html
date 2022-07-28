@@ -6,3 +6,9 @@
         </li>
     </ul>
 </div>
+<input #addInput class="input input-primary input-sm" type="text" placeholder="Agregar Cliente" (input)="findByName(addInput.value)">
+<ul class="menu menu-compact dropdown-content bg-white">
+    <li *ngFor="let item of clients">
+        <a (click)="onSelect(item)">{{item.name}}</a>
+    </li>
+</ul>

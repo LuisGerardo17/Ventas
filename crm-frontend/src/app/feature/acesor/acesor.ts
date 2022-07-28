@@ -1,3 +1,5 @@
+import { AcesorClient } from "./AcesorClient";
+
 export interface Acesor
  {
    acesorId:number,
@@ -9,5 +11,6 @@ export interface Acesor
    //clients:AcesorClient[],
    created:Date,
    updated:Date
+   clients:AcesorClient[],
 
 }
