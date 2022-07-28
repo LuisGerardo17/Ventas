@@ -22,8 +22,8 @@ public save(acesor:Acesor):Observable<Acesor>{
 }
 
 //Read
- public findById(acesorId:number):Observable<Acesor>{
-   return this.http.get<Acesor> (this.url+"/"+ acesorId, this.httpOptions);
+ public findById(id:number):Observable<Acesor>{
+   return this.http.get<Acesor> (this.url+"/"+id, this.httpOptions);
 }
 
 public findAll():Observable<Acesor[]>{

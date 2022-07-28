@@ -5,11 +5,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AcesorComponent } from './feature/acesor/form/acesor.component';
+
 
 
 @NgModule({
   declarations: [
-  AppComponent
+  AppComponent,
+  AcesorComponent
+
 ],
   imports: [
     BrowserModule,
