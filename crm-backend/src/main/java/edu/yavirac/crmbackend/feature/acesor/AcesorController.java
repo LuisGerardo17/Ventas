@@ -27,9 +27,9 @@ public Acesor save(@RequestBody Acesor acesor){
 }
 
 //Read
-@GetMapping("/{id}")
-public Acesor findById(@PathVariable long id){
-    return acesorService.findById(id);
+@GetMapping("/{acesorId}")
+public Acesor findById(@PathVariable long acesorId){
+    return acesorService.findById(acesorId);
 }
 //Update
 @PutMapping("/update")

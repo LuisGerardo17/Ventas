@@ -8,7 +8,7 @@ import lombok.Data;
 public class AcesorAuthority {
     
     @Id 
-    private long id;
+    private Long id;
     private Long acesorId;
     private Long authorityId;
 

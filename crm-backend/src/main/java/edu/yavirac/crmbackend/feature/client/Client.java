@@ -24,9 +24,8 @@ public class Client {
     private String email;
     private boolean enable;
     private long acesorId;
-    
-    @MappedCollection(idColumn = "client_id")
-    private Set<ClientProduct> products = new HashSet<>();
     private Date created;
     private Date updated;
+    @MappedCollection(idColumn = "client_id")
+    private Set<ClientProduct> products = new HashSet<>();
 }

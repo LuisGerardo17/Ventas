@@ -17,8 +17,8 @@ public class AcesorService {
     }
 
     //Read
-    public Acesor findById (long id) {
-        return acesorRepository.findById(id).orElse(new Acesor());
+    public Acesor findById (Long acesorId) {
+        return acesorRepository.findById(acesorId).orElse(new Acesor());
     }
      //Update=Create
 

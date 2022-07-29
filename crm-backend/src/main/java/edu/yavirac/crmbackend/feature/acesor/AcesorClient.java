@@ -7,7 +7,7 @@ import lombok.Data;
 public class AcesorClient {
       
     @Id 
-    private long id;
+    private Long id;
     private Long acesorId;
     private Long clientId;
 }
