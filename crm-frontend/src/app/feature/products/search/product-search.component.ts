@@ -1,27 +1,31 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Products } from '../product';
-import { ProductsService } from '../product.service';
+import { Product } from '../product';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-product-search',
-  templateUrl: './product-search.component.html'
+  templateUrl: './product-search.component.html',
 })
 export class ProductSearchComponent implements OnInit {
 
+
   constructor(
-    private productsService: ProductsService
+    private productService: ProductService
   ) { }
 
-  @Output() productEmiter = new EventEmitter<Products>();
-  products: Products[] = [];
+
+  @Output() productEmiter = new EventEmitter<Product>();
+  products: Product[] = [];
 
   ngOnInit(): void {
+
   }
+
 
   findByName(term: string):void {
 
     if (term.length>=2){
-      this.productsService.findByName(term).subscribe(
+      this.productService.findByName(term).subscribe(
         (response) => {
           console.log(term + " "+ response);
           this.products = response
@@ -34,8 +38,12 @@ export class ProductSearchComponent implements OnInit {
 
   }
 
-  onSelect(products:Products): void{
-    this.productEmiter.emit(products);
+
+
+  onSelect(product:Product): void{
+    this.productEmiter.emit(product);
   }
+
+
 
 }

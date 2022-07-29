@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Client } from '../client';
 import { ClientService } from '../client.service';
 import { ActivatedRoute, Router} from '@angular/router';
-import { ProductsService } from '../../products/product.service';
-import { Products } from '../../products/product';
+import { ProductService } from '../../products/product.service';
+import { Product } from '../../products/product';
 import { ClientProduct } from '../ClientProduct';
 @Component({
   selector: 'app.client',
@@ -17,7 +17,7 @@ export class ClientComponent implements OnInit {
     private clientService: ClientService,
     private activedRoute: ActivatedRoute,
     private route:Router,
-    private productsService: ProductsService
+    private productService: ProductService
   ) { }
 
   ngOnInit(): void {
@@ -52,8 +52,8 @@ findById(clientId:number): void{
     this.currentClient = response;
     this.currentClient.products.forEach(
       (item: ClientProduct) => {
-        this.productsService.findById(item.productoId).subscribe(
-          (products:Products) => item.name = products.name)
+        this.productService.findById(item.productoId).subscribe(
+          (products:Product) => item.name = products.name)
         }
       )
     }
@@ -86,14 +86,14 @@ delete():void{
 }
 
 
-onSelect(products:Products): void {
+onSelect(product:Product): void {
   let clientProduct= {
     clientId:this.currentClient.clientId,
-    productoId:products.productoId,
+    productoId:product.productoId,
     id:0,
-    name:products.name
+    name:product.name
   }
-  console.log(products);
+  console.log(product);
   this.currentClient.products.push(clientProduct);
 }
 

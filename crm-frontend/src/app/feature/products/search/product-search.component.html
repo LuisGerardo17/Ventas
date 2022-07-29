@@ -1,8 +1,11 @@
 <div class="dropdown dropdown-hover">
-    <input #addInput class="input input-primary input-sm" type="text" placeholder="Agregar Producto" (input)="findByName(addInput.value)">
-    <ul class="menu menu-compact dropdown-content bg-white">
-        <li *ngFor="let item of products">
-            <a (click)="onSelect(item)">{{item.name}}</a>
-        </li>
-    </ul>
+  <input #addInput class="input input-primary input-sm"
+  type="text" placeholder="Agregar Producto Relacionado"
+  (input)="findByName(addInput.value)"
+  >
+  <ul class="menu menu-compact dropdown-content bg-white" >
+      <li *ngFor="let item of products">
+          <a (click)="onSelect(item)">{{item.name}}</a>
+      </li>
+  </ul>
 </div>

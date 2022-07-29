@@ -15,6 +15,8 @@ import { AuthoritySearchComponent } from './authority/search/authority-search.co
 import { PersonComboboxComponent } from './person/person-combobox/person-combobox.component';
 import { ClientSearchComponent } from './client/search/client-search.component';
 import { ProductComponent } from './products/form/product.component';
+import { ProductToolbarComponent } from './products/toolbar/product-toolbar.component';
+import { ProductListComponent } from './products/list/product-list.component';
 
 
 @NgModule({
@@ -31,7 +33,10 @@ import { ProductComponent } from './products/form/product.component';
     AuthoritySearchComponent,
     PersonComboboxComponent,
     ClientSearchComponent,
-    ProductComponent
+    ProductComponent,
+    ProductToolbarComponent,
+    ProductListComponent,
+    ProductSearchComponent
 ],
   imports: [
     CommonModule,

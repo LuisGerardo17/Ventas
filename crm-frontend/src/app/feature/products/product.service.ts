@@ -1,41 +1,42 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Products } from './product';
-
+import {Product} from './product';
+import {Observable} from 'rxjs';
+import {HttpClient, HttpHeaders}  from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProductsService {
+export class ProductService {
+    private httpOptions = {
+    headers:new HttpHeaders({"Content-Type":"application/json"}) //instancia la clase
 
-  constructor(
-    private http: HttpClient
-  ) { }
+}
+ private url:string = "http://localhost:8090/api/product";
 
-  private httpOptions = {
-    headers: new HttpHeaders({"Content-Type":"application/json"})
-  }
+   constructor(
+   private http: HttpClient
+) { }
+//Create
+public save(product:Product):Observable<Product>{
+  return this.http.post<Product>(this.url+ "/save",product, this.httpOptions);
+}
 
-  private url:string = "http://localhost:8090/api/product";
+//Read
+ public findById(productoId:number):Observable<Product>{
+   return this.http.get<Product> (this.url+"/"+ productoId, this.httpOptions);
+}
 
+public findAll():Observable<Product[]>{
+  return this.http.get<Product[]>(this.url+"/findAll", this.httpOptions);
+}
 
-  public findById(id: number):Observable<Products>{
-    return this.http.get<Products>(this.url+"/findById/"+id, this.httpOptions);
-  }
+public findByName(term: string):Observable<Product[]>{
+  return this.http.get<Product[]>(this.url+"/findByName/"+term, this.httpOptions);
+}
 
-  public findByName(term: string): Observable<Products[]>{
-    return this.http.get<Products[]>(this.url+"/findByName/"+term, this.httpOptions);
-  }
-
-  //Create
-  public save(product: Products): Observable<Products> {
-    return this.http.post<Products>(this.url + "/save", product, this.httpOptions);
-  }
-
-  public findAll(): Observable<Products[]> {
-    return this.http.get<Products[]>(this.url + "/findAll", this.httpOptions);
-  }
-
+public deleteById(id: number): Observable<void>{
+  console.log(id);
+  return this.http.delete<void>(this.url+"/delete/"+id, this.httpOptions);
+}
 
 }

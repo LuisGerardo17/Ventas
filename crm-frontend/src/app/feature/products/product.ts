@@ -1,9 +1,6 @@
-export interface Products {
-  productoId: number,
-  name: string
-}
-
 import { ProductRelated } from "./ProductRelated";
+
+
 export interface Product
  {
    productoId:number,
